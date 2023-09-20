@@ -1,4 +1,4 @@
-package com.naveen.QuizApp.service;
+package com.naveen.QuizApp.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -17,7 +17,16 @@ public class Question {
     private String option2;
     private String option3;
     private String option4;
-    private String rightAnswer;
+    private Integer rightAnswer;
     private String difficultylevel;
     private String category;
+    private Integer chose;
+
+    public Integer getRightAnswer() {
+        return rightAnswer;
+    }
+
+    public void setRightAnswer(Integer rightAnswer) {
+        this.rightAnswer = rightAnswer;
+    }
 }

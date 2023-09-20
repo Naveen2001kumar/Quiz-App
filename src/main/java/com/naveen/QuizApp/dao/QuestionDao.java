@@ -1,10 +1,13 @@
 package com.naveen.QuizApp.dao;
 
-import com.naveen.QuizApp.service.Question;
+import com.naveen.QuizApp.entity.Question;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
-public interface QuestionDao extends JpaRepository<Question, Integer> {
+public interface QuestionDao extends JpaRepository<Question,Integer> {
+    List<Question> findByCategory(String category);
 
 }
