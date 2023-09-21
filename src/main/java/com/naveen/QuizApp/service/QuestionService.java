@@ -9,7 +9,11 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import com.naveen.QuizApp.dao.ResultRepo;
 import com.naveen.QuizApp.entity.Result;
+
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
+
 @Service
 public class QuestionService {
     @Autowired
@@ -25,7 +29,6 @@ public class QuestionService {
     @Autowired
     ResultRepo rRepo;
 
-
     public  String addQuestion(Question question) {
         questionDao.save(question);
         return "Succes!";
@@ -33,17 +36,26 @@ public class QuestionService {
     public QuestionForm getQuestions()
     {
         List<Question> allQues = questionDao.findAll();
-        qform.setQuestion(allQues);
+        List<Question> qList = new ArrayList<>();
+
+        Random random = new Random();
+
+        for(int i=0; i<5; i++) {
+            int rand = random.nextInt(allQues.size());
+            qList.add(allQues.get(rand));
+            allQues.remove(rand);
+        }
+        qform.setQuestion(qList);
+       //qform.setQuestion(allQues);
         return qform;
     }
     public int getResult(QuestionForm qForm) {
         int correct = 0;
 
         for(Question q: qForm.getQuestion())
-            if(q.getRightAnswer()== q.getChose()){
+            if(q.getRightAnswer().equals(q.getChose())){
                 correct++;
             }
-
         return correct;
     }
     public void saveScore(Result result) {
@@ -55,7 +67,6 @@ public class QuestionService {
 
     public List<Result> getTopScore() {
         List<Result> sList = rRepo.findAll(Sort.by(Sort.Direction.DESC, "totalCorrect"));
-
         return sList;
     }
 
