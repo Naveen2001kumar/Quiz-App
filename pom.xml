@@ -55,6 +55,7 @@
 			<artifactId>snakeyaml</artifactId>
 			<version>1.28</version> <!-- Use the latest fixed version -->
 		</dependency>
+
 	</dependencies>
 	<build>
 		<plugins>
@@ -69,6 +70,11 @@
 						</exclude>
 					</excludes>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0</version> <!-- Make sure this matches the plugin version -->
 			</plugin>
 		</plugins>
 	</build>
