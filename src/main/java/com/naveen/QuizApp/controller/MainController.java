@@ -1,6 +1,8 @@
 package com.naveen.QuizApp.controller;
 
 import com.naveen.QuizApp.dao.CustomerDao;
+import com.naveen.QuizApp.dao.QuestionDao;
+import com.naveen.QuizApp.entity.Question;
 import com.naveen.QuizApp.entity.Result;
 import com.naveen.QuizApp.model.QuestionForm;
 import com.naveen.QuizApp.service.QuestionService;
@@ -22,6 +24,8 @@ public class MainController {
     CustomerDao custRepo;
     @Autowired
     Result result;
+    @Autowired
+    QuestionDao questionDao;
     String head;
 String god;
     @GetMapping("/")
@@ -46,6 +50,17 @@ String god;
         System.out.println(member.toString());
            model.addAttribute("succes","Registerd succesfully login below!");
             return "RegistrationForm";
+    }
+    @GetMapping("addQuestion")
+    public String setQuestion()
+    {
+        return "add";
+    }
+    @PostMapping("add")
+    public void addQuestion(Question question , Model model )
+    {
+        questionDao.save(question);
+        model.addAttribute("succes","One Question added Succesfully");
     }
     @ModelAttribute("result")
     public Result getResult() {
