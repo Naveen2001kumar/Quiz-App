@@ -47,7 +47,6 @@ String god;
         }
         else
             custRepo.save(member);
-        System.out.println(member.toString());
            model.addAttribute("succes","Registerd succesfully login below!");
             return "RegistrationForm";
     }
@@ -74,7 +73,7 @@ String god;
             Member mem=  custRepo.findByUserid(username);
             head = mem.getName();
             result.setUsername(head);
-            QuestionForm qform= questionService.getQuestions();
+            QuestionForm qform = questionService.getQuestions();
             model.addAttribute("qForm",qform);
             String h = "Welcome ";
             model.addAttribute("name",h+head);
