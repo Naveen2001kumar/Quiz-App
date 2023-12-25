@@ -10,7 +10,7 @@
     <link rel="stylesheet" th:href="@{/static/result.css}">
     <title>Result Page</title>
 </head>
-<body>
+<body style="background: linear-gradient(to right, #4e54c8, #8f94fb);">
 
 <!-- Main Container Start -->
 <div class="main-container container py-5 px-4">
@@ -29,7 +29,7 @@
 
         <div class="d-flex justify-content-center">
             <p>Total false answer:&nbsp;&nbsp;</p>
-            <p th:if="${result}" th:text="5 - ${result.totalCorrect}"></p>
+            <p th:if="${result}" th:text="10 - ${result.totalCorrect}"></p>
         </div>
 
         <div class="d-flex justify-content-center mt-4">

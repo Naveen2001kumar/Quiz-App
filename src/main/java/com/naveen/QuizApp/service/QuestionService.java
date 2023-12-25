@@ -33,9 +33,9 @@ public class QuestionService {
         questionDao.save(question);
         return "Succes!";
     }
-    public QuestionForm getQuestions()
+    public QuestionForm getQuestions(String category)
     {
-        List<Question> allQues = questionDao.findAll();
+        List<Question> allQues = questionDao.findByCategory(category);
         List<Question> qList = new ArrayList<>();
 
         Random random = new Random();

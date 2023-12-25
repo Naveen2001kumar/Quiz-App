@@ -6,32 +6,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" th:href="@{/css/index.css}">
+    <link rel="stylesheet" th:href="@{/css/add.css}">
     <title>Add Question's</title>
 
 </head>
-<body>
+<body style="background: linear-gradient(to right, #4e54c8, #8f94fb);">
 <div class="main-container container py-5 px-4">
     <div class="text-box">
         <h1 class="mb-5 text-center"> Quiz Website</h1>
         <form class="card bg-dark py-5 px-4" action="/add" method="POST">
-            <p>questionTitle</p>
+            <p class="text-light">questionTitle</p>
             <input type="text" name="questionTitle" id="questionTitle" required/>
-            <p>option1</p>
+            <p class="text-light">option1</p>
             <input type="text" name="option1" id="option1" required/>
-            <p>option2</p>
+            <p class="text-light">option2</p>
             <input type="text" name="option2" id="option2" required/>
-            <p>option3</p>
+            <p class="text-light">option3</p>
             <input type="text" name="option3" id="option3" required/>
-            <p>option4</p>
+            <p class="text-light">option4</p>
             <input type="text" name="option4" id="option4" required/>
-            <p> rightAnswer</p>
+            <p class="text-light" > rightAnswer</p>
             <input type="text" name="rightAnswer" id="rightAnswer" required/>
-            <p>difficultylevel</p>
+            <p class="text-light">difficultylevel</p>
             <input type="text" name="difficultylevel" id="difficultylevel" required/>
-            <p>category</p>
+            <p class="text-light">category</p>
             <input type="text" name="category" id="category" required/>
-            <p>chose</p>
+            <p class="text-light">chose</p>
             <input type="text" name="chose" id="chose" value="0"/>
             <p class="text-success success" th:if="${succes}" th:text="${succes}"></p>
             <button type="submit" class="btn text-white bg-danger">submit</button>
