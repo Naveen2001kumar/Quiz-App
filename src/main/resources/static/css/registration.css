@@ -1,0 +1,40 @@
+body {
+    background: linear-gradient(to right, #4e54c8, #8f94fb);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+
+.custom-container {
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+
+h2 {
+    color: #fff;
+}
+
+label {
+    color: black;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.btn-link {
+    color: #007bff;
+}
+
+.btn-link:hover {
+    color: #0056b3;
+}
